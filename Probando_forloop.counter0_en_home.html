@@ -1,0 +1,76 @@
+
+C:\Users\lucien>D:
+
+D:\>cd ING.SISTEMAS\Python\src
+
+
+D:\ING.SISTEMAS\python\src>dir
+ El volumen de la unidad D es Data
+ El número de serie del volumen es: 78D8-4DF8
+
+ Directorio de D:\ING.SISTEMAS\python\src
+
+21/06/2020  19:19    <DIR>          .
+21/06/2020  19:19    <DIR>          ..
+01/06/2020  11:59               549 bibliografia.txt
+01/06/2020  11:50               629 consulta.html
+01/06/2020  11:38               513 consulta.py
+21/06/2020  18:21           139.264 db.sqlite3
+25/05/2020  12:43               108 hola.py
+21/06/2020  18:59    <DIR>          inicio
+21/06/2020  16:47               648 manage.py
+08/06/2020  16:30    <DIR>          personas
+08/06/2020  15:53    <DIR>          primero
+08/06/2020  15:25    <DIR>          project-prueba
+21/06/2020  19:55    <DIR>          templates
+               6 archivos        141.711 bytes
+               7 dirs  241.935.110.144 bytes libres
+ 
+D:\ING.SISTEMAS\python\src>project-prueba\Scripts\activate.bat
+
+//enviando variables desde vistas.py mediante funcion render.
+
+(project-prueba) D:\ING.SISTEMAS\python\src>vim inicio\views.py
+
+//posicionando las variables
+
+(project-prueba) D:\ING.SISTEMAS\python\src>vim templates\home.html
+
+//utilizando el tag: for
+
+(project-prueba) D:\ING.SISTEMAS\python\src>vim inicio\views.py
+git
+//inicializando for en home.html
+
+(project-prueba) D:\ING.SISTEMAS\python\src>vim templates\home.html
+
+// utilizando el forloop:counter
+
+// viendo en home.html
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Template Base</title>
+    </head>
+    <body>
+        {% extends 'base.html' %}
+        {% block content %}
+        <h1>Hola Mundo desde Django</h1>
+        <h2>Con Templates</h2>
+        <p>
+            {{myText}},
+            {{myNumber}}
+        </p>
+        <ul>
+            {% for myItem in myList %}
+            <li>{{ forloop.counter }} - {{ myItem }}</li>
+            {% endfor %}
+            <p>De otra manera:</p>
+            {% for myItem in myList %}
+            <li>{{ forloop.counter0 }} - {{ myItem }}</li>
+            {% endfor %}
+        </ul>
+        {% endblock %}
+    </body>
+// </html>
